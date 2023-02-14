@@ -1,0 +1,287 @@
+<html>
+  <head>
+    <title>Slideshow Images</title>
+    <style>
+      .slider {
+        width: 500px;
+        height: 300px;
+        background-color: yellow;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .image-container {
+        width: 1500px;
+        background-color: pink;
+        height: 300px;
+        clear: both;
+        position: relative;
+        -webkit-transition: left 2s;
+        -moz-transition: left 2s;
+        -o-transition: left 2s;
+        transition: left 2s;
+      }
+
+      .slide {
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+      }
+
+      #slide-1:target ~ .image-container {
+        left: 0px;
+      }
+
+      #slide-2:target ~ .image-container {
+        left: -500px;
+      }
+
+      #slide-3:target ~ .image-container {
+        left: -1000px;
+      }
+
+      .buttons {
+        position: relative;
+        top: -20px;
+      }
+
+      .buttons a {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+        background-color: lightgreen;
+      }
+
+      body {
+        background: LightGray;
+      }
+
+      @-webkit-keyframes sheen {
+        0% {
+          -webkit-transform: skewY(-45deg) translateX(0);
+          transform: skewY(-45deg) translateX(0);
+        }
+
+        100% {
+          -webkit-transform: skewY(-45deg) translateX(12.5em);
+          transform: skewY(-45deg) translateX(12.5em);
+        }
+      }
+
+      @keyframes sheen {
+        0% {
+          -webkit-transform: skewY(-45deg) translateX(0);
+          transform: skewY(-45deg) translateX(0);
+        }
+
+        100% {
+          -webkit-transform: skewY(-45deg) translateX(12.5em);
+          transform: skewY(-45deg) translateX(12.5em);
+        }
+      }
+
+      .wrapper {
+        display: block;
+        position: absolute;
+        top: 20%;
+        left: 88%;
+        -webkit-transform: translate(-20%, -20%);
+        transform: translate(-20%, -20%);
+      }
+
+      .button {
+        padding: 0.75em 2em;
+        text-align: center;
+        text-decoration: none;
+        color: #2194e0;
+        border: 2px solid #2194e0;
+        font-size: 11px;
+        display: inline-block;
+        border-radius: 0.3em;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .button:before {
+        content: "";
+        background-color: rgba(228, 57, 57, 0.5);
+        height: 100%;
+        width: 3em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4.5em;
+        -webkit-transform: skewX(-45deg) translateX(0);
+        transform: skewX(-45deg) translateX(0);
+        -webkit-transition: none;
+        transition: none;
+      }
+
+      .button:hover {
+        background-color: #2194e0;
+        color: #fff;
+        border-bottom: 4px solid #1977b5;
+      }
+
+      .button:hover:before {
+        -webkit-transform: skewX(-45deg) translateX(13.5em);
+        transform: skewX(-45deg) translateX(13.5em);
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+      }
+
+      table,
+      th,
+      td {
+        border: 0px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="width: 100%; height: 100%; color: #fff;">
+      <div style="background-color: #b5dcb3; width: 100%;">
+        <div><b></b></div>
+        HOME ABOUT COURSE BLOG SIGN IN
+      </div>
+
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          height: 100%;
+          background-color: #0c0c0c;
+          color: #fff;
+          justify-content: space-between;
+        "
+      >
+        <div
+          style="
+            background-color: #0c0c0c;
+            display: flex;
+            align-items: center;
+            font-size: 26;
+          "
+        >
+          <p style="">Become A ProDesigner</p>
+          <br />
+          <br />
+          <br />
+        </div>
+
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            background-color: #0c0c0c;
+            color: #fff;
+          "
+        >
+          <div class="slider">
+            <span id="slide-1"></span>
+            <span id="slide-2"></span>
+            <span id="slide-3"></span>
+            <div class="image-container">
+              <img
+                src="https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5ea9e312990e08746d80d094_5e28eadaff920783b494509b_hIP-HOP-DANCE-BLOG-p-1600.jpeg"
+                class="slide"
+                width="500"
+                height="300"
+              />
+              <img
+                src="https://gromaudio.com/blog/wp-content/uploads/2017/05/Music-Headphones.jpg"
+                class="slide"
+                width="500"
+                height="300"
+              />
+              <img
+                src="https://www.denoyerdance.com/wp-content/uploads/2013/12/Recital-15-3195.jpg"
+                class="slide"
+                width="500"
+                height="300"
+              />
+            </div>
+            <div class="buttons">
+              <a href="#slide-1"></a>
+              <a href="#slide-2"></a>
+              <a href="#slide-3"></a>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: #0c0c0c;
+            display: flex;
+            align-items: center;
+            font-size: 16;
+            flex-direction: column;
+            justify-content: center;
+          "
+        >
+          <b>Start guide for beginner designer</b><br />
+          Lorem ipsum dolor sit amet, consectetutr adipiscing elit<br />
+          <br />
+          <div>
+            <a href="#" class="button">Sign in</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <table  width = "100%" border = "0" style="color: hsl(96, 45%, 98%);" >
+         
+        <tr valign = "top"">
+           <td bgcolor = "#zzz"  width = "20%">
+              <b>Become A ProDesigner</b><br />
+              <br />
+              <br />
+              
+           </td>
+               
+           <td bgcolor = "#zzz" height = "200" width = "50%">
+              
+              <div class="slider">
+                <span id="slide-1"></span>
+                <span id="slide-2"></span>
+                <span id="slide-3"></span>
+                <div class="image-container">
+                  <img src="https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5ea9e312990e08746d80d094_5e28eadaff920783b494509b_hIP-HOP-DANCE-BLOG-p-1600.jpeg" class="slide" width="500" height="300" />
+                  <img src="https://gromaudio.com/blog/wp-content/uploads/2017/05/Music-Headphones.jpg" class="slide" width="500" height="300" />
+                  <img src="https://www.denoyerdance.com/wp-content/uploads/2013/12/Recital-15-3195.jpg" class="slide" width="500" height="300" />
+                </div>
+                <div class="buttons">
+                  <a href="#slide-1"></a>
+                  <a href="#slide-2"></a>
+                  <a href="#slide-3"></a>
+                </div>
+              </div>
+           </td>
+               
+           <td bgcolor = "#zzz"  width = "30%">
+              <b style="position: relative;">Start guide for beginner designer</b><br />
+              Lorem ipsum dolor sit amet, consectetutr adipiscing elit<br />
+              <br />
+              <div class="wrapper">
+                <a href="#" class="button">Sign in</a>
+              </div>
+           </td>
+        </tr>
+        
+     <table> -->
+
+      <div style="background-color: #b5dcb3; clear: both;">
+        <center>
+          Copyright © 20233 predisegner.com
+        </center>
+      </div>
+    </div>
+  </body>
+</html>
